@@ -8,7 +8,9 @@
       <p>Is Safe?: {{ joke.safe }}</p>
       <p>Language: {{ joke.lang.toUpperCase() }}</p>
       <p>Flags:</p>
-      <div v-for="flag in jokeFlags" :key="flag">{{ flag }}&nbsp;</div>
+      <div v-for="flag in jokeFlags" :key="flag.toString()">
+        {{ flag }}&nbsp;
+      </div>
     </div>
     <p v-if="loading">Loading...</p>
     <p v-if="error">{{ error }}</p>
@@ -44,14 +46,14 @@ export default defineComponent({
     },
   },
   methods: {
-    async fetchJokes(id: string, category: string) {
+    async fetchJoke(id: string) {
       this.loading = true;
       try {
         const response = await axios.get(
           `https://v2.jokeapi.dev/joke/Any?idRange=${id}`
         );
         this.joke = response.data;
-      } catch (err: any) {
+      } catch (err: unknown) {
         if (axios.isAxiosError(err)) {
           if (err.response?.status === 404) {
             this.error = "No Data";
@@ -67,7 +69,7 @@ export default defineComponent({
     },
   },
   mounted() {
-    this.fetchJokes(this.id, this.category);
+    this.fetchJoke(this.id);
   },
 });
 </script>

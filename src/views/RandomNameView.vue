@@ -10,7 +10,7 @@ import getStudentNames from "@/data/data";
 import { defineComponent } from "vue";
 import { mapActions } from "vuex";
 
-const randomArrayElement = (array: any[]) =>
+const randomArrayElement = (array: string[]) =>
   array[Math.floor(Math.random() * array.length)];
 
 export default defineComponent({
