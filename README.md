@@ -1,24 +1,9 @@
-# codelex-md-23
+# Frontend Homework 24
 
-## Project setup
-```
-npm install
-```
+I have finished my twenty-fifth homework.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Think I understand Vuex now more or less.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Still saved some time by ignoring styling.
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+I know it's bad. I'll pull everything together and find some time
